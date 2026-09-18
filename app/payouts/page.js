@@ -15,7 +15,7 @@ import SideDrawer, { DrawerRow, DrawerSection } from "../../components/SideDrawe
 import { bankAccount, holdReason, payouts, payoutTrend, upcomingPayout } from "../../data/payouts";
 import { downloadFile, formatAmount, formatDate, formatMoney, formatTime } from "../../utils/helpers";
 
-// how each payout status should look
+ 
 const payoutStatus = {
   paid: { label: "Paid", tone: "green" },
   in_transit: { label: "In transit", tone: "blue" },
@@ -29,7 +29,7 @@ const tabs = [
   { key: "on_hold", label: "On hold" },
 ];
 
-// turn the payout list into a CSV file
+ 
 function payoutsToCSV(list) {
   const header = ["Payout ID", "Settled on", "For payments of", "Transactions", "Gross", "Fees", "GST", "Refunds", "Net", "UTR", "Status"];
   const rows = list.map((payout) => [
@@ -130,7 +130,7 @@ export default function PayoutsPage() {
       </div>
 
       <div className="split-grid">
-        {/* last 7 payouts as a simple bar chart */}
+       
         <section className="panel-card rounded-lg border border-gray-200 bg-white p-5">
           <h2 className="text-sm font-semibold text-gray-900">Last 7 payouts</h2>
           <p className="text-xs text-gray-500">Net amount that reached your bank account</p>
@@ -160,7 +160,7 @@ export default function PayoutsPage() {
           )}
         </section>
 
-        {/* where the money goes */}
+         
         <section className="panel-card rounded-lg border border-gray-200 bg-white p-5">
           <h2 className="text-sm font-semibold text-gray-900">Settlement account</h2>
           <p className="text-xs text-gray-500">Every payout is sent here</p>
@@ -235,7 +235,7 @@ export default function PayoutsPage() {
           />
         ) : (
           <>
-            {/* table for bigger screens */}
+            
             <div className="table-wrap">
               <table className="w-full text-sm">
                 <thead>

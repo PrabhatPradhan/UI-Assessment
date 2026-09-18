@@ -29,8 +29,7 @@ export default function ReportsPage() {
 
   const biggestMonth = Math.max(...monthlySummary.map((month) => month.volume));
   const rangeLabel = ranges.find((item) => item.key === range).label;
-
-  // build a small CSV out of the monthly numbers so the button really downloads something
+ 
   function handleDownload(template) {
     const header = ["Month", "Transactions", "Volume", "Refunds", "Fees", "Net", "Success rate"];
     const rows = monthlySummary.map((month) => [
@@ -175,7 +174,7 @@ export default function ReportsPage() {
               </table>
             </div>
 
-            {/* small screens: the same numbers as a list with a bar */}
+            
             <ul className="txn-list divide-y divide-gray-100 border-t border-gray-200">
               {monthlySummary.map((month) => (
                 <li key={month.month} className="px-4 py-3">

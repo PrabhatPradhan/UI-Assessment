@@ -44,7 +44,7 @@ export default function DisputesPage() {
   const [stageFilter, setStageFilter] = useState("all");
   const [selectedId, setSelectedId] = useState(null);
 
-  // evidence the user has ticked inside the drawer
+  
   const [checkedEvidence, setCheckedEvidence] = useState({});
 
   useEffect(() => {
@@ -80,7 +80,7 @@ export default function DisputesPage() {
   const decidedCount = disputes.filter((d) => d.stage === "won" || d.stage === "lost").length;
   const winRate = Math.round((wonCount / decidedCount) * 100);
 
-  // is this evidence item ticked? (saved answers win, otherwise the value from the data)
+   
   function isEvidenceDone(dispute, index, fallback) {
     const key = dispute.id + "-" + index;
     return checkedEvidence[key] === undefined ? fallback : checkedEvidence[key];

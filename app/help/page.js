@@ -55,7 +55,7 @@ export default function HelpPage() {
 
   return (
     <AppShell title="Help" subtitle="Answers, guides and a way to reach us">
-      {/* search + support channels */}
+      
       <section className="rounded-lg border border-gray-200 bg-white p-4">
         <h2 className="text-base font-semibold text-gray-900">How can we help?</h2>
         <p className="text-sm text-gray-500">Search the help centre or talk to the support team.</p>
@@ -189,7 +189,7 @@ export default function HelpPage() {
         </div>
       </div>
 
-      {/* guides */}
+      
       <div>
         <h2 className="mb-3 text-base font-semibold text-gray-900">Step by step guides</h2>
 

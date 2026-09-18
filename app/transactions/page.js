@@ -37,7 +37,7 @@ export default function TransactionsPage() {
   // ui
   const [selectedId, setSelectedId] = useState(null);
 
-  // Fake API call. Add ?state=loading, ?state=empty or ?state=error to the URL to see those states.
+  // Fake API call.
   function loadData(demoState) {
     setIsLoading(true);
     setHasError(false);
@@ -61,10 +61,10 @@ export default function TransactionsPage() {
     loadData(params.get("state"));
   }, []);
 
-  // ---------- filtering ----------
+  
   const searchText = search.trim().toLowerCase();
 
-  // step 1: apply search, method and date (everything except status)
+   
   const transactionsBeforeStatus = allTransactions.filter((txn) => {
     const matchesSearch =
       searchText === "" ||
@@ -77,29 +77,26 @@ export default function TransactionsPage() {
     return matchesSearch && matchesMethod && matchesDate;
   });
 
-  // step 2: apply the status tab
+   
   const filteredTransactions = transactionsBeforeStatus.filter((txn) => {
     return statusFilter === "all" || txn.status === statusFilter;
   });
 
-  // counts shown on the status tabs
-  // (they use step 1, so the numbers match what you will see after clicking a tab)
-  const statusCounts = { all: transactionsBeforeStatus.length, success: 0, pending: 0, failed: 0, refunded: 0 };
+    const statusCounts = { all: transactionsBeforeStatus.length, success: 0, pending: 0, failed: 0, refunded: 0 };
   transactionsBeforeStatus.forEach((txn) => {
     statusCounts[txn.status] += 1;
   });
 
-  // ---------- pagination ----------
+  
   const totalPages = Math.max(1, Math.ceil(filteredTransactions.length / rowsPerPage));
   const safePage = Math.min(currentPage, totalPages);
   const startIndex = (safePage - 1) * rowsPerPage;
   const pageTransactions = filteredTransactions.slice(startIndex, startIndex + rowsPerPage);
-
-  // ---------- selected transaction ----------
+ 
   const selectedTransaction = allTransactions.find((txn) => txn.id === selectedId);
   const selectedPosition = filteredTransactions.findIndex((txn) => txn.id === selectedId) + 1; // 0 = not in list
 
-  // ---------- handlers ----------
+   
   function handleSearchChange(value) {
     setSearch(value);
     setCurrentPage(1);
@@ -133,7 +130,7 @@ export default function TransactionsPage() {
     setCurrentPage(1);
   }
 
-  // clicking a summary card filters the table and scrolls to it
+   
   function handleCardSelect(key) {
     const newStatus = key === statusFilter ? "all" : key;
     handleStatusChange(newStatus);
@@ -157,7 +154,7 @@ export default function TransactionsPage() {
     }
   }
 
-  // ---------- what to show inside the table card ----------
+   
   let tableContent;
 
   if (isLoading) {

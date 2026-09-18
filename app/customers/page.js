@@ -90,7 +90,7 @@ export default function CustomersPage() {
 
   const selectedCustomer = customers.find((customer) => customer.id === selectedId);
 
-  // payments made by the selected customer
+   
   const customerPayments = selectedCustomer
     ? transactions.filter((txn) => txn.email === selectedCustomer.email).slice(0, 5)
     : [];

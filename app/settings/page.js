@@ -26,7 +26,7 @@ const tabs = [
   { key: "developers", label: "Developers" },
 ];
 
-// a small on/off switch
+ 
 function Toggle({ checked, onChange, label }) {
   return (
     <button
@@ -139,8 +139,7 @@ export default function SettingsPage() {
             </div>
           </div>
         )}
-
-        {/* ---------------- Team ---------------- */}
+ 
         {activeTab === "team" && (
           <div>
             <div className="flex items-center justify-between gap-3 p-4">
@@ -216,7 +215,7 @@ export default function SettingsPage() {
           </div>
         )}
 
-        {/* ---------------- Payment methods ---------------- */}
+        
         {activeTab === "methods" && (
           <div className="p-4">
             <h2 className="text-sm font-semibold text-gray-900">Methods shown at checkout</h2>
@@ -250,7 +249,7 @@ export default function SettingsPage() {
           </div>
         )}
 
-        {/* ---------------- Notifications ---------------- */}
+         
         {activeTab === "notifications" && (
           <div className="p-4">
             <h2 className="text-sm font-semibold text-gray-900">When should we tell you?</h2>
@@ -286,7 +285,7 @@ export default function SettingsPage() {
           </div>
         )}
 
-        {/* ---------------- Developers ---------------- */}
+       
         {activeTab === "developers" && (
           <div className="p-4">
             <h2 className="text-sm font-semibold text-gray-900">API keys</h2>
