@@ -1,6 +1,4 @@
-// People who have paid through Paysetu at least once.
-// "status" is our own label: new, active, or at_risk (many failed payments).
-
+ 
 export const customers = [
   { id: "CUS-7101", name: "Aarav Sharma", email: "aarav.sharma@gmail.com", phone: "+91 98110 22841", city: "New Delhi", joinedOn: "2025-11-04", payments: 34, totalSpent: 184500, successRate: 97, failedPayments: 1, lastPaymentOn: "2026-09-17T14:32:00", preferredMethod: "UPI", status: "active" },
   { id: "CUS-7098", name: "Priya Nair", email: "priya.nair@outlook.com", phone: "+91 98450 71223", city: "Bengaluru", joinedOn: "2025-08-19", payments: 51, totalSpent: 421900, successRate: 94, failedPayments: 3, lastPaymentOn: "2026-09-17T14:18:00", preferredMethod: "Card", status: "active" },
@@ -22,8 +20,7 @@ export const customers = [
   { id: "CUS-7031", name: "Simran Kaur", email: "simran.kaur@gmail.com", phone: "+91 98764 30021", city: "Amritsar", joinedOn: "2026-09-09", payments: 2, totalSpent: 2398, successRate: 50, failedPayments: 1, lastPaymentOn: "2026-09-13T20:15:00", preferredMethod: "Wallet", status: "new" },
 ];
 
-// how many payments each customer made in the last 6 months,
-// used for the small chart inside the customer panel
+ 
 export const customerActivity = [
   { label: "Apr", count: 4 },
   { label: "May", count: 6 },

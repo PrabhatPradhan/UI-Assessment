@@ -1,9 +1,9 @@
-// Grey placeholder block shown while data is loading
+ 
 export default function Skeleton({ className = "" }) {
   return <div className={`animate-pulse rounded bg-gray-200/70 motion-reduce:animate-none ${className}`} />;
 }
 
-// Placeholder rows for the transactions table
+ 
 export function TableSkeleton({ rows = 6 }) {
   const rowList = Array.from({ length: rows });
 

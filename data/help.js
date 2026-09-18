@@ -1,5 +1,4 @@
-// Content for the Help page.
-
+ 
 export const faqs = [
   {
     id: "faq-1",

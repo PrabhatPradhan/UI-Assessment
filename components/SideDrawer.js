@@ -3,16 +3,14 @@
 import { useEffect, useRef } from "react";
 import { X } from "lucide-react";
 
-// The panel that slides in from the right.
-// On mobile it becomes a full screen sheet (see .drawer in globals.css).
+ 
 export default function SideDrawer({ title, subtitle, onClose, footer, children }) {
   const closeButtonRef = useRef(null);
 
   useEffect(() => {
     if (closeButtonRef.current) closeButtonRef.current.focus();
   }, []);
-
-  // Escape closes the drawer and the page behind it should not scroll
+ 
   useEffect(() => {
     function handleKeyDown(event) {
       if (event.key === "Escape") onClose();
@@ -55,7 +53,7 @@ export default function SideDrawer({ title, subtitle, onClose, footer, children 
   );
 }
 
-// Small helpers so every drawer looks the same
+ 
 export function DrawerSection({ title, children }) {
   return (
     <div className="border-t border-gray-100 px-5 py-4 first:border-t-0">

@@ -1,6 +1,4 @@
-// Payout = the money Paysetu sends to the merchant's bank account.
-// Every payout is made of many transactions, minus fees, GST and refunds.
-
+ 
 export const bankAccount = {
   bankName: "HDFC Bank",
   accountName: "Paysetu Retail Private Limited",
@@ -24,19 +22,18 @@ export const payouts = [
   { id: "PYT-20831", settledOn: "2026-09-07T11:30:00", period: "5 Sep 2026", gross: 391450, fees: 5872, gst: 1057, refunds: 0, net: 384521, transactionCount: 46, utr: "HDFC26090712178", status: "paid" },
   { id: "PYT-20830", settledOn: "2026-09-06T11:30:00", period: "4 Sep 2026", gross: 302600, fees: 4539, gst: 817, refunds: 899, net: 296345, transactionCount: 39, utr: "HDFC26090612104", status: "paid" },
 ];
+ 
 
-// the payout that is still being prepared
 export const upcomingPayout = {
   amount: 517430,
   transactionCount: 61,
   expectedOn: "18 Sep 2026",
   period: "16 Sep 2026",
 };
+ 
 
-// reason shown when a payout is kept on hold
 export const holdReason = "KYC document re-verification is pending. Upload the latest bank statement to release this payout.";
 
-// last 7 payouts, used for the small bar chart
 export const payoutTrend = [
   { label: "11 Sep", amount: 296345 },
   { label: "12 Sep", amount: 384521 },

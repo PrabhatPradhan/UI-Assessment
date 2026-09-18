@@ -1,7 +1,6 @@
 import Skeleton from "./Skeleton";
 
-// One number with a label, used at the top of most pages.
-// Pass an icon component to show an icon on the right.
+ 
 export default function StatCard({ label, value, note, noteTone = "gray", icon: Icon, iconColor = "text-gray-400", isLoading }) {
   const noteColors = {
     gray: "text-gray-500",

@@ -12,7 +12,7 @@ const cardIcons = {
 function StatCard({ stat, isActive, onClick }) {
   const Icon = cardIcons[stat.key].icon;
   const isUp = stat.change >= 0;
-  // for failed/pending, going up is bad news
+  
   const isGoodChange = isUp === stat.goodWhenUp;
 
   return (
@@ -69,7 +69,7 @@ export default function SummaryCards({ stats, isLoading, activeStatus, onSelect 
         <StatCard
           key={stat.key}
           stat={stat}
-          // "Total" card is not highlighted, it just resets the filter
+          
           isActive={stat.key !== "all" && stat.key === activeStatus}
           onClick={() => onSelect(stat.key)}
         />

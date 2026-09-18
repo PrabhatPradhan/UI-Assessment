@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // brand blue is only used for selected + focus states
+       
         brand: {
           50: "#EEF2FD",
           100: "#DCE4FB",

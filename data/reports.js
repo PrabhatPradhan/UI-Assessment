@@ -1,4 +1,4 @@
-// Reports the operations team downloads every month.
+ 
 
 export const reportTemplates = [
   { id: "settlement", name: "Settlement report", description: "Payout wise breakdown of gross amount, fees, GST and net amount sent to the bank.", format: "XLSX", rows: "1 row per payout", updated: "17 Sep 2026" },
@@ -9,7 +9,7 @@ export const reportTemplates = [
   { id: "customers", name: "Customer report", description: "Customers with number of payments, total spend and success rate.", format: "XLSX", rows: "1 row per customer", updated: "17 Sep 2026" },
 ];
 
-// numbers for the last 6 months
+ 
 export const monthlySummary = [
   { month: "Apr 2026", transactions: 3184, volume: 9846200, refunds: 184300, fees: 147693, net: 9514207, successRate: 92.4 },
   { month: "May 2026", transactions: 3562, volume: 10932400, refunds: 211600, fees: 163986, net: 10556814, successRate: 93.1 },
@@ -19,7 +19,7 @@ export const monthlySummary = [
   { month: "Sep 2026", transactions: 2476, volume: 7612800, refunds: 132900, fees: 114192, net: 7365708, successRate: 94.6 },
 ];
 
-// reports that are emailed automatically
+ 
 export const scheduledReports = [
   { id: "SCH-11", name: "Settlement report", frequency: "Every Monday, 8:00 AM", recipients: "finance@paysetu.in", format: "XLSX", status: "active" },
   { id: "SCH-12", name: "Transaction report", frequency: "Daily, 9:00 PM", recipients: "ops@paysetu.in, kriti@paysetu.in", format: "CSV", status: "active" },
@@ -27,7 +27,7 @@ export const scheduledReports = [
   { id: "SCH-14", name: "Dispute report", frequency: "Every Friday, 6:00 PM", recipients: "risk@paysetu.in", format: "CSV", status: "paused" },
 ];
 
-// last few files that were generated
+ 
 export const recentDownloads = [
   { id: "DWN-4412", name: "Settlement report – 1 to 15 Sep 2026", size: "184 KB", createdOn: "2026-09-16T08:02:00", createdBy: "Kriti Sood", format: "XLSX" },
   { id: "DWN-4411", name: "Transaction report – 15 Sep 2026", size: "1.2 MB", createdOn: "2026-09-15T21:00:00", createdBy: "Scheduled", format: "CSV" },

@@ -1,5 +1,4 @@
-// Row of tabs, for example: All 40 | Open 3 | Won 2
-// tabs looks like: [{ key: "all", label: "All", count: 40 }]
+ 
 export default function Tabs({ tabs, activeKey, onChange }) {
   return (
     <div className="status-tabs -mb-px flex items-center gap-1 overflow-x-auto" role="tablist">

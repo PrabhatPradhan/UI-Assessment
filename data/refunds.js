@@ -1,5 +1,4 @@
-// Refund = money sent back to the customer for a payment that already went through.
-
+ 
 export const refunds = [
   { id: "RFD-9241", transactionId: "TXN-40842", customer: "Dev Malhotra", email: "dev.malhotra@icloud.com", method: "Card", methodDetail: "Visa ending 9012", originalAmount: 5499, amount: 5499, type: "Full", reason: "Customer changed their mind", note: "Order cancelled within 24 hours of purchase.", requestedOn: "2026-09-16T22:05:00", completedOn: "2026-09-17T10:12:00", status: "completed", speed: "Normal", merchant: "Loom & Thread", initiatedBy: "Kriti Sood" },
   { id: "RFD-9240", transactionId: "TXN-40828", customer: "Tanya Sethi", email: "tanya.sethi@gmail.com", method: "UPI", methodDetail: "tanya.s@okaxis", originalAmount: 12400, amount: 12400, type: "Full", reason: "Item out of stock", note: "Warehouse could not fulfil the order.", requestedOn: "2026-09-15T16:40:00", completedOn: "2026-09-16T09:25:00", status: "completed", speed: "Instant", merchant: "FreshCart Grocery", initiatedBy: "Auto refund rule" },
@@ -14,14 +13,13 @@ export const refunds = [
   { id: "RFD-9231", transactionId: "TXN-40722", customer: "Imran Shaikh", email: "imran.shaikh@gmail.com", method: "UPI", methodDetail: "imran.s@okhdfcbank", originalAmount: 899, amount: 899, type: "Full", reason: "Customer changed their mind", note: "", requestedOn: "2026-09-08T10:12:00", completedOn: "2026-09-08T10:19:00", status: "completed", speed: "Instant", merchant: "BrewBox Coffee", initiatedBy: "Auto refund rule" },
   { id: "RFD-9230", transactionId: "TXN-40711", customer: "Ritu Bhatia", email: "ritu.bhatia@gmail.com", method: "Card", headerDetail: "", methodDetail: "Mastercard ending 8865", originalAmount: 15600, amount: 5200, type: "Partial", reason: "Service partly delivered", note: "One night of the booking was not used.", requestedOn: "2026-09-07T19:50:00", completedOn: "2026-09-09T09:40:00", status: "completed", speed: "Normal", merchant: "SkyWays Travel", initiatedBy: "Kriti Sood" },
 ];
-
-// how long each refund type usually takes, shown on the page
+ 
 export const refundSpeeds = [
   { speed: "Instant", note: "UPI and wallet refunds reach the customer in a few minutes." },
   { speed: "Normal", note: "Card and net banking refunds take 5 to 7 working days." },
 ];
 
-// the most common reasons, used for the small breakdown panel
+ 
 export const refundReasons = [
   { reason: "Customer changed their mind", count: 34, share: 38 },
   { reason: "Item out of stock", count: 21, share: 23 },

@@ -5,7 +5,7 @@ import StatusBadge from "./StatusBadge";
 import { formatAmount, formatDate, formatShortDate, formatTime } from "../utils/helpers";
 
 export default function TransactionTable({ transactions, selectedId, onSelect }) {
-  // let keyboard users open a row with Enter or Space
+  
   function handleRowKeyDown(event, transaction) {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();

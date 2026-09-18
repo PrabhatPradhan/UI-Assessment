@@ -1,6 +1,4 @@
-// Dispute (also called chargeback) = the customer asked their bank to take the money back.
-// We have to send proof before the due date, otherwise the case is lost automatically.
-
+ 
 export const disputes = [
   {
     id: "DSP-3312",

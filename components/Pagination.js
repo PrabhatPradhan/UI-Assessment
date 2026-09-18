@@ -1,6 +1,5 @@
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
-
-// Which page buttons to show, e.g. [1, "...", 4, 5, 6, "...", 12]
+ 
 function getPageNumbers(currentPage, totalPages) {
   if (totalPages <= 7) {
     const pages = [];

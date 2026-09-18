@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Check, Copy } from "lucide-react";
 
-// Copies a piece of text and shows a tick for 2 seconds.
+ 
 export default function CopyButton({ value, label = "Copy" }) {
   const [copied, setCopied] = useState(false);
 

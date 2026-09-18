@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Bell, ChevronDown, Menu, Search, X } from "lucide-react";
 import { notifications } from "../data/transactions";
 
-// Search box used in the header (desktop) and below the header (mobile)
+ 
 function SearchInput({ value, onChange, placeholder, inputRef, autoFocus }) {
   return (
     <div className="relative">
@@ -57,8 +57,7 @@ export default function Header({ title, subtitle, search, onSearchChange, search
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
-  // press "/" anywhere to jump to the search box
+ 
   useEffect(() => {
     function handleKeyDown(event) {
       const tag = event.target.tagName;

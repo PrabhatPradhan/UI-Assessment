@@ -4,12 +4,11 @@ import { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 
-// Every page uses this. It draws the sidebar and the header,
-// and the page itself is passed in as "children".
+ 
 export default function AppShell({ title, subtitle, search, onSearchChange, searchPlaceholder, children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // keep the browser tab title in sync with the page
+   
   useEffect(() => {
     document.title = title + " | Paysetu";
   }, [title]);

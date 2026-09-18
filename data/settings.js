@@ -1,4 +1,4 @@
-// Everything shown on the Settings page.
+ 
 
 export const businessProfile = {
   businessName: "Paysetu Retail Private Limited",

@@ -25,8 +25,7 @@ const dateOptions = [
   { value: "7days", label: "Last 7 days" },
   { value: "30days", label: "Last 30 days" },
 ];
-
-// Styled native <select> (works well on mobile too)
+ 
 function SelectBox({ label, value, options, onChange }) {
   return (
     <label className="relative block">

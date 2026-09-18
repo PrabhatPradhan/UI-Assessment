@@ -20,7 +20,6 @@ import { payouts, upcomingPayout } from "../data/payouts";
 import { customers } from "../data/customers";
 import { formatAmount, formatDate, formatMoney, formatShortDate, formatTime } from "../utils/helpers";
 
-// numbers for the top of the page
 const overviewStats = [
   { key: "volume", label: "Total volume", value: formatMoney(4862310), note: "8.4% more than last week", noteTone: "green", icon: TrendingUp, iconColor: "text-brand-600" },
   { key: "success", label: "Success rate", value: "94.6%", note: "1,106 of 1,284 payments", noteTone: "gray", icon: CircleCheck, iconColor: "text-emerald-600" },
@@ -31,7 +30,7 @@ const overviewStats = [
 export default function OverviewPage() {
   const [isLoading, setIsLoading] = useState(true);
 
-  // fake API call, same idea as the transactions page
+ 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 700);
     return () => clearTimeout(timer);
@@ -46,11 +45,10 @@ export default function OverviewPage() {
   const openDisputes = disputes.filter((item) => item.stage === "evidence_required" || item.stage === "under_review");
   const processingRefunds = refunds.filter((item) => item.status === "processing");
   const heldPayouts = payouts.filter((item) => item.status === "on_hold");
-
-  // customers who spent the most
+ 
   const topCustomers = [...customers].sort((a, b) => b.totalSpent - a.totalSpent).slice(0, 5);
 
-  // things the team should look at today
+   
   const todoItems = [
     {
       id: "disputes",

@@ -1,4 +1,4 @@
-// A small coloured label. "tone" decides the colour.
+
 const tones = {
   green: { box: "bg-emerald-50 text-emerald-700 ring-emerald-600/20", dot: "bg-emerald-500" },
   amber: { box: "bg-amber-50 text-amber-800 ring-amber-600/25", dot: "bg-amber-500" },

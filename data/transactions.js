@@ -1,7 +1,4 @@
-// Mock data for the dashboard.
-// In a real app this would come from an API.
-
-// We use a fixed "today" so date filters always give the same result.
+ 
 export const TODAY = "2026-09-17";
 
 export const transactions = [
@@ -47,15 +44,14 @@ export const transactions = [
   { id: "TXN-40813", customer: "Deepika Rawat", email: "deepika.rawat@yahoo.in", method: "Card", methodDetail: "Mastercard ending 8826", amount: 8750, date: "2026-08-12T12:05:00", status: "failed", merchant: "PixelPoint Electronics", orderId: "ORD-87301", failureReason: "3-D Secure verification failed" },
 ];
 
-// Numbers for the summary cards (last 7 days)
+ 
 export const summaryStats = [
   { key: "all", label: "Total transactions", count: 1284, amount: 4862310, change: 8.4, goodWhenUp: true },
   { key: "success", label: "Successful payments", count: 1106, amount: 4418920, change: 6.1, goodWhenUp: true },
   { key: "pending", label: "Pending payments", count: 74, amount: 231400, change: -3.2, goodWhenUp: false },
   { key: "failed", label: "Failed payments", count: 104, amount: 211990, change: 1.8, goodWhenUp: false },
 ];
-
-// Daily transaction counts for the chart (last 14 days)
+ 
 export const activityData = [
   { date: "2026-09-04", label: "4 Sep", fullLabel: "Fri, 4 Sep", success: 146, pending: 9, failed: 15 },
   { date: "2026-09-05", label: "5 Sep", fullLabel: "Sat, 5 Sep", success: 124, pending: 8, failed: 13 },
@@ -72,8 +68,7 @@ export const activityData = [
   { date: "2026-09-16", label: "16 Sep", fullLabel: "Wed, 16 Sep", success: 185, pending: 13, failed: 18 },
   { date: "2026-09-17", label: "17 Sep", fullLabel: "Today, 17 Sep", success: 175, pending: 15, failed: 16 },
 ];
-
-// Payment method split (last 7 days)
+ 
 export const methodStats = [
   { name: "UPI", count: 745, share: 58, successRate: 87.6 },
   { name: "Card", count: 308, share: 24, successRate: 83.1 },
