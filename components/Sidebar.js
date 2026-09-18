@@ -1,3 +1,7 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   ArrowLeftRight,
   Banknote,
@@ -12,40 +16,40 @@ import {
 } from "lucide-react";
 
 const paymentLinks = [
-  { label: "Overview", icon: LayoutDashboard },
-  { label: "Transactions", icon: ArrowLeftRight, active: true },
-  { label: "Payouts", icon: Banknote },
-  { label: "Refunds", icon: RotateCcw },
-  { label: "Disputes", icon: ShieldAlert, badge: 3 },
+  { label: "Overview", href: "/", icon: LayoutDashboard },
+  { label: "Transactions", href: "/transactions", icon: ArrowLeftRight },
+  { label: "Payouts", href: "/payouts", icon: Banknote },
+  { label: "Refunds", href: "/refunds", icon: RotateCcw },
+  { label: "Disputes", href: "/disputes", icon: ShieldAlert, badge: 3 },
 ];
 
 const businessLinks = [
-  { label: "Customers", icon: Users },
-  { label: "Reports", icon: FileText },
+  { label: "Customers", href: "/customers", icon: Users },
+  { label: "Reports", href: "/reports", icon: FileText },
 ];
 
 const bottomLinks = [
-  { label: "Settings", icon: Settings },
-  { label: "Help", icon: CircleHelp },
+  { label: "Settings", href: "/settings", icon: Settings },
+  { label: "Help", href: "/help", icon: CircleHelp },
 ];
 
-function NavItem({ item, onClick }) {
+function NavItem({ item, isActive, onClick }) {
   const Icon = item.icon;
 
   return (
-    <a
-      href="#"
+    <Link
+      href={item.href}
       title={item.label}
       onClick={onClick}
-      aria-current={item.active ? "page" : undefined}
+      aria-current={isActive ? "page" : undefined}
       className={`nav-item group flex h-9 items-center gap-3 rounded-md px-3 text-sm ${
-        item.active ? "bg-gray-100 font-medium text-gray-900" : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+        isActive ? "bg-gray-100 font-medium text-gray-900" : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
       }`}
     >
       <Icon
         size={18}
         strokeWidth={1.75}
-        className={item.active ? "text-brand-600" : "text-gray-400 group-hover:text-gray-600"}
+        className={isActive ? "text-brand-600" : "text-gray-400 group-hover:text-gray-600"}
       />
       <span className="nav-label flex-1">{item.label}</span>
       {item.badge && (
@@ -53,15 +57,16 @@ function NavItem({ item, onClick }) {
           {item.badge}
         </span>
       )}
-    </a>
+    </Link>
   );
 }
 
 export default function Sidebar({ isOpen, onClose }) {
-  // links don't go anywhere in this demo, so we just close the mobile menu
-  function handleLinkClick(event) {
-    event.preventDefault();
-    onClose();
+  const pathname = usePathname();
+
+  // a link is active when it matches the address in the browser
+  function isActive(href) {
+    return pathname === href;
   }
 
   return (
@@ -88,21 +93,21 @@ export default function Sidebar({ isOpen, onClose }) {
           <p className="sidebar-section-title px-3 pb-2 text-xs font-medium text-gray-400">Payments</p>
           <div className="space-y-0.5">
             {paymentLinks.map((item) => (
-              <NavItem key={item.label} item={item} onClick={handleLinkClick} />
+              <NavItem key={item.label} item={item} isActive={isActive(item.href)} onClick={onClose} />
             ))}
           </div>
 
           <p className="sidebar-section-title mt-6 px-3 pb-2 text-xs font-medium text-gray-400">Business</p>
           <div className="nav-group-business space-y-0.5">
             {businessLinks.map((item) => (
-              <NavItem key={item.label} item={item} onClick={handleLinkClick} />
+              <NavItem key={item.label} item={item} isActive={isActive(item.href)} onClick={onClose} />
             ))}
           </div>
         </nav>
 
         <div className="shrink-0 space-y-0.5 border-t border-gray-200 px-3 py-3">
           {bottomLinks.map((item) => (
-            <NavItem key={item.label} item={item} onClick={handleLinkClick} />
+            <NavItem key={item.label} item={item} isActive={isActive(item.href)} onClick={onClose} />
           ))}
         </div>
       </aside>

@@ -5,7 +5,7 @@ import { Bell, ChevronDown, Menu, Search, X } from "lucide-react";
 import { notifications } from "../data/transactions";
 
 // Search box used in the header (desktop) and below the header (mobile)
-function SearchInput({ value, onChange, inputRef, autoFocus }) {
+function SearchInput({ value, onChange, placeholder, inputRef, autoFocus }) {
   return (
     <div className="relative">
       <Search size={16} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
@@ -15,8 +15,8 @@ function SearchInput({ value, onChange, inputRef, autoFocus }) {
         value={value}
         autoFocus={autoFocus}
         onChange={(event) => onChange(event.target.value)}
-        placeholder="Search by ID, customer or email"
-        aria-label="Search transactions"
+        placeholder={placeholder}
+        aria-label={placeholder}
         className="h-9 w-full rounded-md border border-gray-300 bg-white pl-9 pr-9 text-sm text-gray-900 placeholder:text-gray-400 hover:border-gray-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
       />
       {value ? (
@@ -37,7 +37,7 @@ function SearchInput({ value, onChange, inputRef, autoFocus }) {
   );
 }
 
-export default function Header({ search, onSearchChange, onMenuClick }) {
+export default function Header({ title, subtitle, search, onSearchChange, searchPlaceholder, onMenuClick }) {
   const [showNotifications, setShowNotifications] = useState(false);
   const [showMobileSearch, setShowMobileSearch] = useState(false);
   const [notificationList, setNotificationList] = useState(notifications);
@@ -93,16 +93,17 @@ export default function Header({ search, onSearchChange, onMenuClick }) {
         </button>
 
         <div className="min-w-0 flex-1">
-          <h1 className="truncate text-lg font-semibold leading-6 text-gray-900">Transactions</h1>
-          <p className="header-subtitle truncate text-xs text-gray-500">
-            Monitor payments and review individual transactions
-          </p>
+          <h1 className="truncate text-lg font-semibold leading-6 text-gray-900">{title}</h1>
+          <p className="header-subtitle truncate text-xs text-gray-500">{subtitle}</p>
         </div>
 
-        <div className="header-search">
-          <SearchInput value={search} onChange={onSearchChange} inputRef={searchRef} />
-        </div>
+        {onSearchChange && (
+          <div className="header-search">
+            <SearchInput value={search} onChange={onSearchChange} placeholder={searchPlaceholder} inputRef={searchRef} />
+          </div>
+        )}
 
+        {onSearchChange && (
         <button
           type="button"
           onClick={() => setShowMobileSearch(!showMobileSearch)}
@@ -115,6 +116,7 @@ export default function Header({ search, onSearchChange, onMenuClick }) {
           <Search size={18} />
           {search && <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-brand-500 ring-2 ring-white" />}
         </button>
+        )}
 
         {/* Notifications */}
         <div className="relative" ref={notificationRef}>
@@ -182,9 +184,9 @@ export default function Header({ search, onSearchChange, onMenuClick }) {
         </button>
       </header>
 
-      {showMobileSearch && (
+      {showMobileSearch && onSearchChange && (
         <div className="mobile-search border-t border-gray-100 px-4 py-2.5">
-          <SearchInput value={search} onChange={onSearchChange} autoFocus />
+          <SearchInput value={search} onChange={onSearchChange} placeholder={searchPlaceholder} autoFocus />
         </div>
       )}
     </div>

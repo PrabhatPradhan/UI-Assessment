@@ -1,0 +1,31 @@
+// Refund = money sent back to the customer for a payment that already went through.
+
+export const refunds = [
+  { id: "RFD-9241", transactionId: "TXN-40842", customer: "Dev Malhotra", email: "dev.malhotra@icloud.com", method: "Card", methodDetail: "Visa ending 9012", originalAmount: 5499, amount: 5499, type: "Full", reason: "Customer changed their mind", note: "Order cancelled within 24 hours of purchase.", requestedOn: "2026-09-16T22:05:00", completedOn: "2026-09-17T10:12:00", status: "completed", speed: "Normal", merchant: "Loom & Thread", initiatedBy: "Kriti Sood" },
+  { id: "RFD-9240", transactionId: "TXN-40828", customer: "Tanya Sethi", email: "tanya.sethi@gmail.com", method: "UPI", methodDetail: "tanya.s@okaxis", originalAmount: 12400, amount: 12400, type: "Full", reason: "Item out of stock", note: "Warehouse could not fulfil the order.", requestedOn: "2026-09-15T16:40:00", completedOn: "2026-09-16T09:25:00", status: "completed", speed: "Instant", merchant: "FreshCart Grocery", initiatedBy: "Auto refund rule" },
+  { id: "RFD-9239", transactionId: "TXN-40815", customer: "Rohit Saxena", email: "rohit.saxena@gmail.com", method: "Net Banking", methodDetail: "Axis Bank", originalAmount: 33900, amount: 15000, type: "Partial", reason: "Service partly delivered", note: "Two of five sessions were cancelled by the trainer.", requestedOn: "2026-09-17T12:10:00", completedOn: null, status: "processing", speed: "Normal", merchant: "Kinetic Fitness", initiatedBy: "Kriti Sood" },
+  { id: "RFD-9238", transactionId: "TXN-40809", customer: "Neha Pillai", email: "neha.pillai@outlook.com", method: "Card", methodDetail: "Mastercard ending 4417", originalAmount: 8999, amount: 8999, type: "Full", reason: "Duplicate payment", note: "Customer was charged twice for the same order.", requestedOn: "2026-09-17T09:02:00", completedOn: null, status: "processing", speed: "Instant", merchant: "UrbanNest Furniture", initiatedBy: "Aman Bedi" },
+  { id: "RFD-9237", transactionId: "TXN-40796", customer: "Farhan Qureshi", email: "farhan.q@gmail.com", method: "UPI", methodDetail: "farhanq@ybl", originalAmount: 2499, amount: 2499, type: "Full", reason: "Customer changed their mind", note: "", requestedOn: "2026-09-14T18:30:00", completedOn: "2026-09-15T11:48:00", status: "completed", speed: "Normal", merchant: "Kinetic Fitness", initiatedBy: "Kriti Sood" },
+  { id: "RFD-9236", transactionId: "TXN-40788", customer: "Simran Kaur", email: "simran.kaur@gmail.com", method: "Wallet", methodDetail: "Paytm Wallet", originalAmount: 1199, amount: 1199, type: "Full", reason: "Order cancelled", note: "Show was cancelled by the theatre.", requestedOn: "2026-09-13T20:15:00", completedOn: "2026-09-13T20:22:00", status: "completed", speed: "Instant", merchant: "Cinebox Plus", initiatedBy: "Auto refund rule" },
+  { id: "RFD-9235", transactionId: "TXN-40774", customer: "Aditya Kulkarni", email: "aditya.k@gmail.com", method: "Card", methodDetail: "RuPay ending 2290", originalAmount: 4500, amount: 4500, type: "Full", reason: "Product damaged", note: "Replacement was not available.", requestedOn: "2026-09-12T14:05:00", completedOn: "2026-09-13T10:30:00", status: "completed", speed: "Normal", merchant: "Loom & Thread", initiatedBy: "Aman Bedi" },
+  { id: "RFD-9234", transactionId: "TXN-40761", customer: "Pooja Rathi", email: "pooja.rathi@yahoo.in", method: "UPI", methodDetail: "pooja.rathi@oksbi", originalAmount: 26500, amount: 6500, type: "Partial", reason: "Price difference adjusted", note: "Hotel downgraded the room category.", requestedOn: "2026-09-11T11:20:00", completedOn: "2026-09-12T15:10:00", status: "completed", speed: "Normal", merchant: "SkyWays Travel", initiatedBy: "Kriti Sood" },
+  { id: "RFD-9233", transactionId: "TXN-40748", customer: "Manish Agarwal", email: "manish.agarwal@gmail.com", method: "Net Banking", methodDetail: "ICICI Bank", originalAmount: 19999, amount: 19999, type: "Full", reason: "Fraud reported by customer", note: "Refund failed because the account was closed.", requestedOn: "2026-09-10T17:45:00", completedOn: null, status: "failed", speed: "Normal", merchant: "UrbanNest Furniture", initiatedBy: "Risk team" },
+  { id: "RFD-9232", transactionId: "TXN-40736", customer: "Kavya Menon", email: "kavya.menon@gmail.com", method: "Card", methodDetail: "Visa ending 3382", originalAmount: 7890, amount: 7890, type: "Full", reason: "Item out of stock", note: "", requestedOn: "2026-09-09T13:35:00", completedOn: "2026-09-10T12:02:00", status: "completed", speed: "Normal", merchant: "Loom & Thread", initiatedBy: "Auto refund rule" },
+  { id: "RFD-9231", transactionId: "TXN-40722", customer: "Imran Shaikh", email: "imran.shaikh@gmail.com", method: "UPI", methodDetail: "imran.s@okhdfcbank", originalAmount: 899, amount: 899, type: "Full", reason: "Customer changed their mind", note: "", requestedOn: "2026-09-08T10:12:00", completedOn: "2026-09-08T10:19:00", status: "completed", speed: "Instant", merchant: "BrewBox Coffee", initiatedBy: "Auto refund rule" },
+  { id: "RFD-9230", transactionId: "TXN-40711", customer: "Ritu Bhatia", email: "ritu.bhatia@gmail.com", method: "Card", headerDetail: "", methodDetail: "Mastercard ending 8865", originalAmount: 15600, amount: 5200, type: "Partial", reason: "Service partly delivered", note: "One night of the booking was not used.", requestedOn: "2026-09-07T19:50:00", completedOn: "2026-09-09T09:40:00", status: "completed", speed: "Normal", merchant: "SkyWays Travel", initiatedBy: "Kriti Sood" },
+];
+
+// how long each refund type usually takes, shown on the page
+export const refundSpeeds = [
+  { speed: "Instant", note: "UPI and wallet refunds reach the customer in a few minutes." },
+  { speed: "Normal", note: "Card and net banking refunds take 5 to 7 working days." },
+];
+
+// the most common reasons, used for the small breakdown panel
+export const refundReasons = [
+  { reason: "Customer changed their mind", count: 34, share: 38 },
+  { reason: "Item out of stock", count: 21, share: 23 },
+  { reason: "Service partly delivered", count: 14, share: 16 },
+  { reason: "Duplicate payment", count: 11, share: 12 },
+  { reason: "Product damaged", count: 10, share: 11 },
+];

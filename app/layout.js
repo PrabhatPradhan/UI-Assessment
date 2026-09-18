@@ -8,8 +8,8 @@ const plexSans = IBM_Plex_Sans({
 });
 
 export const metadata = {
-  title: "Transactions | Paysetu",
-  description: "Monitor payments and review individual transactions",
+  title: "Paysetu — Payments dashboard",
+  description: "Payments, payouts, refunds and disputes for your business",
 };
 
 export default function RootLayout({ children }) {

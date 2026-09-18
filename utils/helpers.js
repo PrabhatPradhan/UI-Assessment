@@ -150,3 +150,22 @@ export function downloadFile(fileName, content, type) {
   link.click();
   URL.revokeObjectURL(url);
 }
+
+// How many days are left until a date, counted from our fixed "today".
+// We build the dates from numbers so the server and the browser agree.
+export function daysUntil(dateString) {
+  const [year, month, day] = dateString.split("T")[0].split("-").map(Number);
+  const [todayYear, todayMonth, todayDay] = TODAY.split("-").map(Number);
+  const target = Date.UTC(year, month - 1, day);
+  const today = Date.UTC(todayYear, todayMonth - 1, todayDay);
+  return Math.round((target - today) / 86400000);
+}
+
+// -3 -> "3 days ago", 0 -> "today", 2 -> "in 2 days"
+export function describeDays(days) {
+  if (days === 0) return "today";
+  if (days === 1) return "tomorrow";
+  if (days === -1) return "yesterday";
+  if (days > 1) return `in ${days} days`;
+  return `${Math.abs(days)} days ago`;
+}
